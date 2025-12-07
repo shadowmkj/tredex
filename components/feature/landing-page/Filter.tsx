@@ -26,14 +26,14 @@ export function Filter() {
                 <div>
                     <h3 className="font-semibold mb-2">Category</h3>
                     {categories?.data?.map((category) => (
-                        <div key={category._id as string} className="flex items-center space-x-2">
+                        <div key={category._id.toString()} className="flex items-center space-x-2">
                             <Checkbox
-                                id={`category-${category._id as string}`}
+                                id={`category-${category._id.toString()}`}
                                 checked={filters.category.includes(category.name)}
                                 onCheckedChange={() => setFilter('category', category.name)}
                                 className="h-5 w-5"
                             />
-                            <label htmlFor={`category-${category._id as string}`}>{category.name}</label>
+                            <label htmlFor={`category-${category._id.toString()}`}>{category.name}</label>
                         </div>
                     ))}
                 </div>
@@ -84,14 +84,14 @@ export function Filter() {
                 <div>
                     <h3 className="font-semibold mb-2">Brand</h3>
                     {brands?.data?.map((brand) => (
-                        <div key={brand._id as string} className="flex items-center space-x-2">
+                        <div key={brand._id.toString()} className="flex items-center space-x-2">
                             <Checkbox
-                                id={`brand-${brand._id as string}`}
+                                id={`brand-${brand._id.toString()}`}
                                 checked={filters.brand.includes(brand.name)}
                                 onCheckedChange={() => setFilter('brand', brand.name)}
                                 className="h-5 w-5"
                             />
-                            <label htmlFor={`brand-${brand._id as string}`}>{brand.name}</label>
+                            <label htmlFor={`brand-${brand._id.toString()}`}>{brand.name}</label>
                         </div>
                     ))}
                 </div>

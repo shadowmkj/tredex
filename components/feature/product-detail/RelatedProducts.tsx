@@ -48,7 +48,7 @@ export function RelatedProducts({ currentProductId }: RelatedProductsProps) {
       <h2 className="text-2xl font-bold mb-4">Related Products</h2>
       <div className="flex space-x-4 overflow-x-auto pb-4">
         {relatedProducts.map((product) => (
-          <div key={product._id as string} className="shrink-0 w-[30vh] md:w-[40vh]">
+          <div key={product._id.toString()} className="shrink-0 w-[30vh] md:w-[40vh]">
             <ProductCard product={product} />
           </div>
         ))}

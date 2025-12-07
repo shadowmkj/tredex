@@ -120,7 +120,7 @@ export const columns: ColumnDef<IProduct>[] = [
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
               <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(product._id as string)}
+                onClick={() => navigator.clipboard.writeText(product._id.toString())}
               >
                 Copy ID
               </DropdownMenuItem>
@@ -144,7 +144,7 @@ export const columns: ColumnDef<IProduct>[] = [
               <AlertDialogCancel>Cancel</AlertDialogCancel>
               <AlertDialogAction
                 onClick={async () => {
-                  await deleteProductById(product._id as string)
+                  await deleteProductById(product._id.toString())
                   toast.success("Product has been deleted successfully!")
                 }}
               >

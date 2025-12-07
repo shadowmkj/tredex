@@ -74,7 +74,7 @@ export const columns: ColumnDef<ICategory>[] = [
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
               <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(category._id as string)}
+                onClick={() => navigator.clipboard.writeText(category._id.toString())}
               >
                 Copy ID
               </DropdownMenuItem>
@@ -102,7 +102,7 @@ export const columns: ColumnDef<ICategory>[] = [
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
               <AlertDialogAction
-                onClick={() => deleteCategory.mutate(category._id as string)}
+                onClick={() => deleteCategory.mutate(category._id.toString())}
               >
                 Delete
               </AlertDialogAction>

@@ -73,7 +73,7 @@ export const HeroParallax = () => {
                             <ProductCard
                                 product={product}
                                 translate={translateX}
-                                key={product._id as string}
+                                key={product._id.toString()}
                             />
                         ))}
                     </motion.div>
@@ -82,7 +82,7 @@ export const HeroParallax = () => {
                             <ProductCard
                                 product={product}
                                 translate={translateXReverse}
-                                key={product._id as string}
+                                key={product._id.toString()}
                             />
                         ))}
                     </motion.div>
@@ -91,7 +91,7 @@ export const HeroParallax = () => {
                             <ProductCard
                                 product={product}
                                 translate={translateX}
-                                key={product._id as string}
+                                key={product._id.toString()}
                             />
                         ))}
                     </motion.div>
@@ -132,11 +132,11 @@ export const ProductCard = ({
             whileHover={{
                 y: -20,
             }}
-            key={product._id as string}
+            key={product._id.toString()}
             className="group/product rounded-lg border-2 overflow-hidden h-56 md:h-96 md:w-[24rem] w-[12rem] relative shrink-0"
         >
             <Link
-                href={`/products/${product._id as string}`}
+                href={`/products/${product._id.toString()}`}
                 className="block group-hover/product:shadow-2xl "
             >
                 <Image // Changed from img to Image

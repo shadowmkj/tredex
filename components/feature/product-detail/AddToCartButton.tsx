@@ -53,7 +53,7 @@ const AddToCartButton = ({ product }: AddToCartButtonProps) => {
             <TermsAndConditionsModal>
                 <Button className='p-0' variant={'link'}>Terms and Conditions</Button>
             </TermsAndConditionsModal>
-            <WhatsappOrderModal productId={product._id as string} onOrderSubmit={handleOrderSubmit}>
+            <WhatsappOrderModal productId={product._id.toString()} onOrderSubmit={handleOrderSubmit}>
                 <Button size={'lg'} className='bg-green-400 text-primary-foreground' onClick={handleAddToCart}>
                     Order on Whatsapp <FaWhatsapp />
                 </Button>

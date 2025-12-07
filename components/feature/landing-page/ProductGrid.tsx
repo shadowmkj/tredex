@@ -137,7 +137,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title = "Collection" }) => {
                 {data.pages?.map((group, i) => (
                   <React.Fragment key={i}>
                     {group.data?.map((product) => (
-                      <ProductCard key={product._id as string} product={product} />
+                      <ProductCard key={product._id.toString()} product={product} />
                     ))}
                   </React.Fragment>
                 ))}

@@ -63,8 +63,8 @@ export function ProductForm({ product }: ProductFormProps) {
     resolver: zodResolver(productSchema),
     defaultValues: {
       name: product?.name || "",
-      category: (product?.category as ICategory)?._id as string || "",
-      brand: (product?.brand as IBrand)?._id as string || "",
+      category: (product?.category as ICategory)?._id.toString() || "",
+      brand: (product?.brand as IBrand)?._id.toString() || "",
       price: product?.price || 0,
       discountPrice: product?.discountPrice || undefined,
       description: product?.description || "",
@@ -156,7 +156,7 @@ export function ProductForm({ product }: ProductFormProps) {
       };
 
       if (product) {
-        const result = await updateProduct(product._id as string, productData);
+        const result = await updateProduct(product._id.toString(), productData);
         if (result.message.includes('successfully')) {
           toast.success(result.message);
           router.push("/dashboard/products")
@@ -228,7 +228,7 @@ export function ProductForm({ product }: ProductFormProps) {
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                {categories?.data?.map((category) => <SelectItem value={category._id as string} key={category._id as string}>{category.name}</SelectItem>)}
+                {categories?.data?.map((category) => <SelectItem value={category._id.toString()} key={category._id.toString()}>{category.name}</SelectItem>)}
               </SelectContent>
             </Select>
           </FormItem>} />
@@ -241,7 +241,7 @@ export function ProductForm({ product }: ProductFormProps) {
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
-                {brands?.data?.map((brand) => <SelectItem value={brand._id as string} key={brand._id as string}>{brand.name}</SelectItem>)}
+                {brands?.data?.map((brand) => <SelectItem value={brand._id.toString()} key={brand._id.toString()}>{brand.name}</SelectItem>)}
               </SelectContent>
             </Select>
           </FormItem>} />

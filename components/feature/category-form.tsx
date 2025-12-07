@@ -39,7 +39,7 @@ export function CategoryForm({ initialData, onClose }: CategoryFormProps) {
 
   const onSubmit = (data: CategoryFormValues) => {
     startTransition(async () => {
-      const action = initialData ? updateCategory(initialData._id as string, data) : createCategoryAction(data);
+      const action = initialData ? updateCategory(initialData._id.toString(), data) : createCategoryAction(data);
       const result = await action;
       if (result.success) {
         toast.success(initialData ? "Category updated successfully" : "Category created successfully");

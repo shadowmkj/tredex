@@ -35,7 +35,7 @@ export function BrandForm({ brand, onClose }: BrandFormProps) {
 
   const onSubmit = (data: BrandFormValues) => {
     startTransition(async () => {
-      const action = brand ? updateBrandAction(brand._id as string, data) : createBrandAction(data);
+      const action = brand ? updateBrandAction(brand._id.toString(), data) : createBrandAction(data);
       const result = await action;
       if (result.success) {
         toast.success(brand ? "Brand updated successfully" : "Brand created successfully");

@@ -72,7 +72,7 @@ export const columns: ColumnDef<IBrand>[] = [
               <DropdownMenuContent align="end">
                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
                 <DropdownMenuItem
-                  onClick={() => navigator.clipboard.writeText(brand._id as string)}
+                  onClick={() => navigator.clipboard.writeText(brand._id.toString())}
                 >
                   Copy ID
                 </DropdownMenuItem>
@@ -100,7 +100,7 @@ export const columns: ColumnDef<IBrand>[] = [
               <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                 <AlertDialogAction
-                  onClick={() => deleteBrand.mutate(brand._id as string)}
+                  onClick={() => deleteBrand.mutate(brand._id.toString())}
                 >
                   Delete
                 </AlertDialogAction>
