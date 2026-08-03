@@ -1,19 +1,21 @@
 FROM node:24-alpine AS builder
+RUN corepack enable
 
-RUN npm i -g pnpm
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml .
+COPY package.json pnpm-lock.yaml ./
+COPY pnpm-workspace.yaml ./
 
+RUN pnpm approve-builds --all
 RUN pnpm install --frozen-lockfile
 # ENV MONGODB_URI mongodb://localhost:27017/tredexdb
 # ENV BETTER_AUTH_SECRET "secret135"
-# ENV BETTER_AUTH_URL http://localhost:3000 
+# ENV BETTER_AUTH_URL http://localhost:3000
 # ENV NEXT_PUBLIC_APP_URL http://localhost:3000
 
 COPY . .
-RUN pnpx @better-auth/cli@latest migrate
+RUN pnpm dlx @better-auth/cli@latest migrate -y
 RUN pnpm build
 
 FROM node:24-alpine AS prod

@@ -1,1 +1,6 @@
-["better-sqlite3"]
+[
+  "better-sqlite3",
+  "esbuild",
+  "sharp",
+  "unrs-resolver"
+]

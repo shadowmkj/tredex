@@ -1,0 +1,13 @@
+pnpm:
+  dangerouslyAllowAllBuilds: true
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - prisma
+  - better-sqlite3
+  - unrs-resolver
+allowBuilds:
+  better-sqlite3: true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
